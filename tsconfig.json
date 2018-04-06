@@ -5,39 +5,17 @@
     "outDir": "./build/",
     "noImplicitAny": false,
     "module": "commonjs",
-    "target": "es5",
-    "lib": [
-      "es5",
-      "es6",
-      "es7",
-      "esnext",
-      "dom"
-    ],
+    "target": "es6",   
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    // "paths": {
-    //   "src/*": [
-    //     "src/*"
-    //   ],
-    //   "core/*": [
-    //     "src/core/*"
-    //   ],
-    //   "store": [
-    //     "src/store.ts"
-    //   ],
-    //   "constants": [
-    //     "src/constants.ts"
-    //   ],
-    //   "reducer": [
-    //     "src/reducer.ts"
-    //   ],
-    //   "actions": [
-    //     "src/actions.ts"
-    //   ]
-    // }
+    "paths": {
+      "src/*": [
+        "src/*"
+      ],      
+    }
   },
   "include": [
     "./src/**/*"
