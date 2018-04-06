@@ -1,0 +1,27 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": [
+            "chrome >= 55",
+            "edge >= 14",
+            "firefox >= 54",
+            "safari >= 10.1",
+            "opera >= 42"
+          ]
+        },
+        "debug": false,
+        "loose": false
+      }
+    ],
+    "stage-2",
+    "react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "react-html-attrs"
+  ]
+}
