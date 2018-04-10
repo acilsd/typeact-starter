@@ -29,6 +29,7 @@
     "no-console": [
       false
     ],
+    "no-unused-expression": false,
     "no-string-literal": false,
     "no-unused-variable": [
       true,
