@@ -1,61 +1,30 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/index.tsx'),
+  entry: ['./src/index'],
   output: {
+    path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build')
   },
-  devtool: 'inline-source-map',
-  module: {    
-    rules: [ 
+  module: {
+    rules: [
       {
-        test: /\.ts(x?)$/,
+        test: /\.tsx?$/,
         use: [
-          { loader: 'babel-loader' },
-          { loader: 'ts-loader' }
-        ]
+          { loader: 'ts-loader', options: { transpileOnly: true } },
+          'babel-loader',
+        ],
       },
-
-      // {
-      //   test: /\.tsx?$/,
-      //   use: [
-      //     'ts-loader', // (or awesome-typescript-loader)
-      //     {
-      //       loader: 'babel-loader',
-      //       options: {
-      //         plugins: [
-      //           '@babel/plugin-syntax-typescript',
-      //           '@babel/plugin-syntax-decorators',
-      //           '@babel/plugin-syntax-jsx',
-      //           'react-hot-loader/babel',
-      //         ],
-      //       },
-      //     }
-      //   ],
-      // }
-
-      {
-        test: /\.js(x?)$/,
-        use: [
-          { loader: 'babel-loader' }
-        ]
-      }
     ],
-  },
-  plugins: [
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  },  
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
+  plugins: [new webpack.NamedModulesPlugin()],
   devServer: {
     contentBase: path.join(__dirname, 'build'),
     publicPath: '/',
-    hot: true,
-    watchOptions: { aggregateTimeout: 300, poll: true },
     port: 9000
   }
-};
+}

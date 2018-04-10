@@ -1,21 +1,11 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": false,
     "outDir": "./build/",
-    "noImplicitAny": false,
+    "sourceMap": true,
+    "noImplicitAny": true,
     "module": "commonjs",
-    "target": "es6",   
-    "jsx": "react",
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "skipLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "src/*": [
-        "src/*"
-      ],      
-    }
+    "target": "es5",
+    "jsx": "react"
   },
   "include": [
     "./src/**/*"
