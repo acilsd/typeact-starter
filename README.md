@@ -1,7 +1,15 @@
-## react starter boilerplate with typescript, mobx and something else
+## react-typescript boilerplate 
 
-* react-16
+---
+
+* react
 * mobx
 * typescript
 * webpack 4
 * styled-components
+
+---
+
+* `yarn install`
+* `yarn start` webpack-dev-server
+* `yarn run build` production bundling

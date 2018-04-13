@@ -1,6 +1,6 @@
 {
   "name": "hot-typescript",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "license": "dunno",
   "scripts": {
     "lint": "tslint --project .",
@@ -9,25 +9,24 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
+    "@types/history": "^4.6.2",
     "@types/react": "^16.0.31",
     "@types/react-dom": "^16.0.3",
     "@types/react-router-dom": "^4.2.6",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
+    "history": "^4.7.2",
     "mobx": "^4.1.1",
     "mobx-logger": "^0.7.0",
     "mobx-react": "^5.0.0",
+    "mobx-react-router": "^4.0.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-hot-loader": "^4.0.0-beta.22",
+    "react-router-dom": "^4.2.2",
     "styled-components": "^3.2.5",
     "ts-loader": "^4.2.0",
     "tslint": "^5.9.1",
     "tslint-react": "^3.5.1",
-    "typescript": "^2.6.2",
+    "typescript": "^2.8.1",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14",
     "webpack-dev-server": "^3.1.3"

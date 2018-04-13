@@ -11,9 +11,8 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: [
+        use: [          
           { loader: 'ts-loader', options: { transpileOnly: true } },
-          'babel-loader',
         ],
       },
     ],
@@ -24,6 +23,7 @@ module.exports = {
   plugins: [new webpack.NamedModulesPlugin()],
   devServer: {
     contentBase: path.join(__dirname, 'build'),
+    historyApiFallback: true, // need this for our clientside routing
     publicPath: '/',
     port: 9000
   }
