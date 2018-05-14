@@ -14,7 +14,7 @@ const MountPoint: React.SFC<RouteComponentProps<any>> = (props) => {
   return (
     <Wrapper styles={{ padding: '10' }}>
       <Switch>
-        <Route exact path='/' component={PageOne} />
+        <Route exact path={'/'} component={PageOne} />
         <Route exact path={'/two'} component={PageTwo} />
       </Switch>
     </Wrapper >
