@@ -11,6 +11,7 @@ import { PageTwo } from './PageTwo';
 
 const MountPoint: React.SFC<RouteComponentProps<any>> = (props) => {
   // yay, our props are already typed! but we dont need em here :P
+  // props
   return (
     <Wrapper styles={{ padding: '10' }}>
       <Switch>
@@ -22,9 +23,3 @@ const MountPoint: React.SFC<RouteComponentProps<any>> = (props) => {
 };
 
 export default hot(module)(MountPoint);
-
-// interface IMyConstObject {
-//   test?: string;
-// }
-
-// const obj = Object.freeze({ test: 'test' }) as IMyConstObject;
