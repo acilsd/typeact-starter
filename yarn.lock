@@ -3233,6 +3233,10 @@ leb@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/leb/-/leb-0.3.0.tgz#32bee9fad168328d6aea8522d833f4180eed1da3"
 
+linqts@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/linqts/-/linqts-1.11.0.tgz#fdc77bf2b18f5d217a8155ffb684ed5c12bd4d32"
+
 listr-silent-renderer@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/listr-silent-renderer/-/listr-silent-renderer-1.1.1.tgz#924b5a3757153770bf1a8e3fbf74b8bbf3f9242e"
@@ -3643,10 +3647,6 @@ mobx-react@^5.2.3:
   dependencies:
     hoist-non-react-statics "^2.5.0"
     react-lifecycles-compat "^3.0.2"
-
-mobx@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/mobx/-/mobx-4.3.1.tgz#334e5aab4916b1d43f0faf3605a64b1b4b3ccb8d"
 
 move-concurrently@^1.0.1:
   version "1.0.1"

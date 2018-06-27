@@ -8,6 +8,9 @@ import { ITestStore } from '../stores/TestStore';
 import styled from '../styled/theme';
 import { Wrapper } from '../components/Wrapper';
 
+// if u haev any params
+// interface IProps extends RouteComponentProps<{ id: string }> {
+
 interface IProps extends RouteComponentProps<any> {
   test?: ITestStore;
 }

@@ -14,7 +14,7 @@
     "@types/react-dom": "^16.0.6",
     "@types/react-router-dom": "^4.2.7",
     "history": "^4.7.2",
-    "mobx": "^4.3.1",
+    "linqts": "^1.11.0",
     "mobx-logger": "^0.7.0",
     "mobx-react": "^5.2.3",
     "mobx-react-router": "^4.0.4",
