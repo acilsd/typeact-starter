@@ -10,6 +10,6 @@
 
 ---
 
-* `yarn install`
-* `yarn start` webpack-dev-server
-* `yarn run build` production bundling
+* `npm install`
+* `npm start` webpack-dev-server
+* `npm run build` production bundling
