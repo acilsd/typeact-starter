@@ -18,14 +18,6 @@ const stores = {
 
 const history = syncHistoryWithStore(browserHistory, routingStore);
 
-import { injectGlobal } from 'styled-components';
-
-injectGlobal`
-  * {
-      margin: 0; padding: 0;
-  }
-`;
-
 import MountPoint from './MountPoint';
 
 const root = document.getElementById('root');

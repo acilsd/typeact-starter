@@ -1,5 +1,12 @@
 import * as styledComponents from 'styled-components';
 import { ThemedStyledComponentsModule } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+* {
+    margin: 0; padding: 0;
+  }
+`;
 
 interface IThemeInterface {
   primaryColor: string;
@@ -8,11 +15,10 @@ interface IThemeInterface {
 
 const {
   default: styled,
-  css,
-  injectGlobal,
+  css,  
   keyframes,
   ThemeProvider,
 } = styledComponents as ThemedStyledComponentsModule<IThemeInterface>;
 
-export { css, injectGlobal, keyframes, ThemeProvider };
+export { css, keyframes, ThemeProvider };
 export default styled;
