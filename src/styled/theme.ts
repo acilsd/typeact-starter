@@ -15,7 +15,7 @@ interface IThemeInterface {
 
 const {
   default: styled,
-  css,  
+  css,
   keyframes,
   ThemeProvider,
 } = styledComponents as ThemedStyledComponentsModule<IThemeInterface>;
