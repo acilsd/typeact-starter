@@ -15,13 +15,13 @@ const WrapperDiv: React.SFC<IWrapper> = (props) => {
 };
 
 const Wrapper = styled(WrapperDiv) `
-  width: ${(props) => `${props.styles.width || '100'}%`};
-  height: ${(props) => `${props.styles.height || '100'}vh`};
+  width: 100%;
+  height: 100vh;
   display: flex;
-  justify-content: ${(props) => `${props.styles.justify || 'center'}`};
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  padding: ${(props) => `${props.styles.padding || '0'}px`};
 `;
 
 export { Wrapper };

@@ -31,6 +31,7 @@
     ],
     "no-unused-expression": false,
     "no-string-literal": false,
+    "jsx-no-multiline-js": false,
     "no-unused-variable": [
       true,
       {
