@@ -52,21 +52,3 @@ class PageOne extends React.Component<IProps> {
 }
 
 export { PageOne };
-//tslint:disable
-
-function test(arr){
-  const result = [];
-
-  for (var a = 0; a < arr.length; a++) {
-    result.push(arr[a]);    
-  }
-
-  for (var i = 0; i < arr.length; i++) {   
-    for (var y = 0; y < result.length; y++) {
-      console.log(result[y], arr[i])
-    }
-  }
-
-  console.log(result)
-  return result;
-};
