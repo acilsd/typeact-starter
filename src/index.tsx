@@ -25,7 +25,7 @@ const root = document.getElementById('root');
 render(
   <MobxProvider {...stores}>
     <Router history={history}>
-      <MountPoint {...({} as RouteComponentProps<any>)}/>
+      <MountPoint {...({} as RouteComponentProps<any>)} />
     </Router>
   </MobxProvider>,
   root,
