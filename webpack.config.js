@@ -11,13 +11,16 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: [          
+        use: [
           { loader: 'ts-loader', options: { transpileOnly: true } },
         ],
       },
     ],
-  },  
+  },
   resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    },
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   plugins: [new webpack.NamedModulesPlugin()],
