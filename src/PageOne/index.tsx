@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router-dom';
-import { observer } from 'mobx-react';
+import { observer, Observer } from 'mobx-react';
+import { action, observable } from 'mobx';
 
 import {
-  TestStoreProvider,
   useTestStore,
 } from '../stores/TestStore/index';
 
@@ -40,23 +40,35 @@ export const PageOne: React.SFC<RouteComponentProps<any>> = observer((props) => 
   const store = useTestStore();
 
   const handleClick = React.useCallback(() => {
-    store.setField('volk', 'name');
-    store.setField('lev', 'surname');
+    store.setField(Math.random().toString(), 'name');
+    store.setField(Math.random().toString(), 'surname');
   }, []);
 
-  return (
-    <TestStoreProvider>
-      <Wrapper styles={{ padding: '10' }}>
-        <Div>
-          <h2>Раньше было лучше</h2>
-          <p>My name is: {store.fields.name || 'empty for now'}</p>
-          <p>Mu surname is: {store.fields.surname || 'empty for now'}</p>
-          <Btn onClick={handleClick}>Uznali?</Btn>
+  // ааа падлы заберите свои хуки назад
+  const shiiiit = observable.array([1, 2, 3, 4, 5]);
 
-          <Link to='/two'> Two </Link>
-        </Div>
-      </Wrapper>
-    </TestStoreProvider>
+  const test = React.useCallback(action(() => {
+    shiiiit.push(1);
+  }), [shiiiit]);
+
+  return (
+    <Observer>
+      {() => (
+        <Wrapper styles={{ padding: '10' }}>
+          <Div>
+            <h2>Раньше было лучше</h2>
+            <p>My name is: {store.fields.name || 'empty for now'}</p>
+            <p>Mu surname is: {store.fields.surname || 'empty for now'}</p>
+
+            <p>{shiiiit.map((i, idx) => <span key={idx}>{i}</span>)}</p>
+            <Btn onClick={handleClick}>?</Btn>
+            <Btn onClick={test}> ??? </Btn>
+
+            <Link to='/two'> Two </Link>
+          </Div>
+        </Wrapper>
+      )}
+    </Observer>
 
   );
 });

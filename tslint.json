@@ -13,6 +13,7 @@
     "jsx-boolean-value": false,
     "jsx-no-lambda": false,
     "jsx-wrap-multiline": false,
+    "jsx-no-multiline-js": false,
     "ordered-imports": [
       true,
       {

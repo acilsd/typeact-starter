@@ -5,6 +5,9 @@ import { createStore, ITestStore } from './store';
 
 const createStoreContext = React.createContext<ITestStore>(createStore());
 
+// we don't need this actually, but still in some cases proper Provider setup would be useful
+// note you dont need to pass an actual createStore function call in that case but null
+
 const TestStoreProvider = ({ children }) => {
   const store = useLocalStore(createStore);
   return <createStoreContext.Provider value={store}>{children}</createStoreContext.Provider>;

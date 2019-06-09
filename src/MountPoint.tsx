@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { hot } from 'react-hot-loader';
+import * as React from 'react';
 
 import { RouteComponentProps } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const MountPoint: React.SFC<RouteComponentProps<any>> = (props) => {
   // props
   return (
     <Wrapper styles={{ padding: '10' }}>
-      <GlobalStyle/>
+      <GlobalStyle />
       <Switch>
         <Route exact path={'/'} component={PageOne} />
         <Route exact path={'/two'} component={PageTwo} />
