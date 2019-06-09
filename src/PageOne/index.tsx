@@ -1,19 +1,15 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router-dom';
-import { inject, observer } from 'mobx-react';
+import { observer } from 'mobx-react';
 
-import { ITestStore } from '../stores/TestStore';
+import {
+  TestStoreProvider,
+  useTestStore,
+} from '../stores/TestStore/index';
 
 import styled from '../styled/theme';
 import { Wrapper } from '../components/Wrapper';
-
-// if u haev any params
-// interface IProps extends RouteComponentProps<{ id: string }> {
-
-interface IProps extends RouteComponentProps<any> {
-  test?: ITestStore;
-}
 
 const Div = styled('div')`
   display: flex;
@@ -29,26 +25,38 @@ const Div = styled('div')`
   };
 `;
 
-@inject('test')
-@observer
-class PageOne extends React.Component<IProps> {
-  componentDidMount() {
-    this.props.test.setUsername('Qwerty');
-    this.props.test.setPassword('12345Uiop');
+const Btn = styled('div')`
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 15px 0;
+  &:hover {
+    cursor: pointer;
   }
+`;
 
-  render() {
-    return (
+// RouteComponentProps<{ id: string }> {
+
+export const PageOne: React.SFC<RouteComponentProps<any>> = observer((props) => {
+  const store = useTestStore();
+
+  const handleClick = React.useCallback(() => {
+    store.setField('volk', 'name');
+    store.setField('lev', 'surname');
+  }, []);
+
+  return (
+    <TestStoreProvider>
       <Wrapper styles={{ padding: '10' }}>
         <Div>
-          <h2>Hello, anon</h2>
-          <p>My name is {this.props.test.username}</p>
-          <p>And my password is {this.props.test.password}</p>
+          <h2>Раньше было лучше</h2>
+          <p>My name is: {store.fields.name || 'empty for now'}</p>
+          <p>Mu surname is: {store.fields.surname || 'empty for now'}</p>
+          <Btn onClick={handleClick}>Uznali?</Btn>
+
           <Link to='/two'> Two </Link>
         </Div>
       </Wrapper>
-    );
-  }
-}
+    </TestStoreProvider>
 
-export { PageOne };
+  );
+});
