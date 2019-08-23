@@ -1,7 +1,8 @@
 import { action, computed, IComputedValue, observable } from 'mobx';
 
 interface IFields {
-  name: string; surname: string;
+  name: string;
+  surname: string;
 }
 
 export interface ITestStore {
@@ -10,17 +11,15 @@ export interface ITestStore {
   setField(value: string, field: string): void;
 }
 
-export const createStore = (): ITestStore => {
-  const store: ITestStore = {
-    fields: observable({
-      name: '',
-      surname: '',
-    }),
-    setField: action((value: string, field: string) => {
-      store.fields[field] = value;
-    }),
-    // getFullname: computed(() => `${store.fields.name} ${store.fields.surname}`),
+class TestStore implements ITestStore {
+  @observable fields = {
+    name: '',
+    surname: '',
   };
 
-  return store;
-};
+  @action setField(value: string, field: string) {
+    this.fields[field] = value;
+  }
+}
+
+export const testStore = new TestStore();
