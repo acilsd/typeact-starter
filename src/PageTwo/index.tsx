@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Wrapper } from '../components/Wrapper';
+import { Wrapper } from 'ui/Wrapper';
 
 const PageTwo: React.SFC<any> = (props) => {
   console.log(props);

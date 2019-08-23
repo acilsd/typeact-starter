@@ -4,12 +4,9 @@ import { RouteComponentProps } from 'react-router-dom';
 import { observer, Observer } from 'mobx-react';
 import { action, observable } from 'mobx';
 
-import {
-  useTestStore,
-} from '../stores/TestStore/index';
-
-import styled from '../styled/theme';
-import { Wrapper } from '../components/Wrapper';
+import { useTestStore } from 'stores/TestStore/index';
+import styled from 'styled/theme';
+import { Wrapper } from 'ui/Wrapper';
 
 const Div = styled('div')`
   display: flex;
@@ -17,12 +14,12 @@ const Div = styled('div')`
 
   & > h2 {
     margin-bottom: 20px;
-  };
+  }
 
   & > p {
     font-size: 20px;
     margin-bottom: 10px;
-  };
+  }
 `;
 
 const Btn = styled('div')`
@@ -44,12 +41,14 @@ export const PageOne: React.SFC<RouteComponentProps<any>> = observer((props) => 
     store.setField(Math.random().toString(), 'surname');
   }, []);
 
-  // ааа падлы заберите свои хуки назад
   const shiiiit = observable.array([1, 2, 3, 4, 5]);
 
-  const test = React.useCallback(action(() => {
-    shiiiit.push(1);
-  }), [shiiiit]);
+  const test = React.useCallback(
+    action(() => {
+      shiiiit.push(1);
+    }),
+    [shiiiit],
+  );
 
   return (
     <Observer>
@@ -60,7 +59,11 @@ export const PageOne: React.SFC<RouteComponentProps<any>> = observer((props) => 
             <p>My name is: {store.fields.name || 'empty for now'}</p>
             <p>Mu surname is: {store.fields.surname || 'empty for now'}</p>
 
-            <p>{shiiiit.map((i, idx) => <span key={idx}>{i}</span>)}</p>
+            <p>
+              {shiiiit.map((i, idx) => (
+                <span key={idx}>{i}</span>
+              ))}
+            </p>
             <Btn onClick={handleClick}>?</Btn>
             <Btn onClick={test}> ??? </Btn>
 
@@ -69,6 +72,5 @@ export const PageOne: React.SFC<RouteComponentProps<any>> = observer((props) => 
         </Wrapper>
       )}
     </Observer>
-
   );
 });

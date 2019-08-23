@@ -5,10 +5,11 @@ import { RouteComponentProps } from 'react-router-dom';
 
 import { Route, Switch } from 'react-router-dom';
 
-import { Wrapper } from './components/Wrapper';
+import { Wrapper } from 'ui/Wrapper';
+import { GlobalStyle } from 'styled/theme';
+
 import { PageOne } from './PageOne';
 import { PageTwo } from './PageTwo';
-import { GlobalStyle } from './styled/theme';
 
 const MountPoint: React.SFC<RouteComponentProps<any>> = (props) => {
   // yay, our props are already typed! but we dont need em here :P
@@ -20,7 +21,7 @@ const MountPoint: React.SFC<RouteComponentProps<any>> = (props) => {
         <Route exact path={'/'} component={PageOne} />
         <Route exact path={'/two'} component={PageTwo} />
       </Switch>
-    </Wrapper >
+    </Wrapper>
   );
 };
 
