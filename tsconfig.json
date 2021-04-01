@@ -1,21 +1,44 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "baseUrl": "./src/",
     "outDir": "./build/",
     "sourceMap": true,
     "module": "esnext",
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "target": "es6",
     "jsx": "react",
-    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "lib": ["es2017", "es2018", "dom", "esnext.asynciterable"],
-    "paths": {
-      "styled/*": ["src/styled/*"],
-      "stores/*": ["src/stores/*"],
-      "ui/*": ["src/ui/*"]
-    }
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "lib": [
+      "es2017",
+      "es2018",
+      "dom",
+      "dom.iterable",
+      "esnext.asynciterable"
+    ],
+    // "paths": {
+    //   "styled/*": [
+    //     "src/styled/*"
+    //   ],
+    //   "stores/*": [
+    //     "src/stores/*"
+    //   ],
+    //   "ui/*": [
+    //     "src/ui/*"
+    //   ]
+    // }
   },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules", "build", "webpack.config.js"]
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "webpack.config.ts"
+  ]
 }

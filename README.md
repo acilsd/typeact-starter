@@ -1,12 +1,4 @@
-## react-typescript boilerplate 
-
----
-
-* react
-* mobx
-* typescript
-* webpack 4
-* styled-components
+### react-typescript-mobx boilerplate 
 
 ---
 
